@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | 美容の勉強ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff1493;
+  --pink-deep:#c70f75;
+  --blush:#ffe1ee;
+  --cream:#fff5e1;
+  --butter:#ffe7a0;
+  --ink:#3b1830;
+  --paper:#fffaf0;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.9;font-size:16px}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* header */
+.site-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px clamp(20px,5vw,56px);background:var(--pink);color:var(--cream)}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.06em}
+.site-nav{display:flex;gap:6px;flex-wrap:wrap}
+.site-nav a{text-decoration:none;padding:6px 16px;border-radius:999px;font-weight:500;font-size:.95rem}
+.site-nav a:hover,.site-nav a[aria-current="page"]{background:var(--cream);color:var(--pink-deep)}
+
+/* page title */
+.page-title{background:var(--pink);color:var(--cream);padding:8px clamp(20px,5vw,56px) 64px;position:relative}
+.page-title h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.06em}
+.page-title p{margin-top:6px}
+.page-title::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--cream);border-radius:50% 50% 0 0/100% 100% 0 0}
+
+/* timeline */
+main{max-width:680px;margin:0 auto;padding:16px clamp(16px,5vw,32px) 72px}
+.feed{background:var(--paper);border:2px solid var(--pink);border-radius:22px;overflow:hidden}
+.post{padding:20px 26px;border-bottom:1.5px dashed #f5b3d4}
+.post:last-child{border-bottom:none}
+.post time{display:block;font-size:.85rem;color:var(--pink-deep);font-weight:700}
+.post p{margin-top:4px}
+
+footer{background:var(--pink);color:var(--cream);text-align:center;padding:28px 20px;font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">美容の勉強ノート</a>
+  <nav class="site-nav" aria-label="メインメニュー">
+    <a href="index.html">Home</a>
+    <a href="blog.html" aria-current="page">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page-title">
+  <h1>Blog</h1>
+  <p>美容の勉強の進捗を、日付と日記だけでつぶやきます。</p>
+</div>
+
+<main>
+  <div class="feed">
+    <article class="post"><time datetime="2026-10-15">2026.10.15</time><p>ここに今日の勉強の進捗を書きます。投稿は新しい順に上から並べてください。</p></article>
+    <article class="post"><time datetime="2026-10-14">2026.10.14</time><p>日付と日記の文章だけのシンプルな投稿です。名前やアイコンは載せません。</p></article>
+    <article class="post"><time datetime="2026-10-13">2026.10.13</time><p>投稿を増やすときは、この article のかたまりをコピーして日付と文章を書き換えます。</p></article>
+    <article class="post"><time datetime="2026-10-12">2026.10.12</time><p>スキンケアの勉強の記録をここに書く予定です。</p></article>
+    <article class="post"><time datetime="2026-10-11">2026.10.11</time><p>メイクやヘアケアのことも、気づいたらどんどん書いていきます。</p></article>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 美容の勉強ノート</p>
+</footer>
+
+</body>
+</html>
