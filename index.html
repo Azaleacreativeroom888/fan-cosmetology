@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>美容の勉強ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff1493;
+  --pink-deep:#c70f75;
+  --blush:#ffe1ee;
+  --cream:#fff5e1;
+  --butter:#ffe7a0;
+  --ink:#3b1830;
+  --paper:#fffaf0;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.9;font-size:16px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* header */
+.site-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px clamp(20px,5vw,56px);background:var(--pink);color:var(--cream)}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.06em}
+.site-nav{display:flex;gap:6px;flex-wrap:wrap}
+.site-nav a{text-decoration:none;padding:6px 16px;border-radius:999px;font-weight:500;font-size:.95rem}
+.site-nav a:hover,.site-nav a[aria-current="page"]{background:var(--cream);color:var(--pink-deep)}
+
+/* hero */
+.hero{background:var(--pink);color:var(--cream);padding:clamp(32px,6vw,72px) clamp(20px,5vw,56px) clamp(56px,8vw,104px);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--cream);border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5.6vw,4.2rem);line-height:1.35;font-weight:700;letter-spacing:.04em}
+.hero p{margin-top:20px;max-width:30em;font-size:1.05rem}
+.hero .btns{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:12px 26px;border-radius:999px;font-weight:700;border:2px solid var(--cream)}
+.btn.solid{background:var(--cream);color:var(--pink-deep)}
+.btn.solid:hover{background:var(--butter)}
+.btn.line:hover{background:rgba(255,245,225,.18)}
+
+/* hand mirror */
+.mirror{justify-self:center;width:min(100%,280px);display:flex;flex-direction:column;align-items:center}
+.mirror .glass{width:100%;aspect-ratio:1/1.12;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 7%,var(--blush) 8% 46%,var(--cream) 47%);border:14px solid var(--butter);box-shadow:0 0 0 5px var(--cream);display:grid;place-items:center;text-align:center;font-family:var(--serif);color:var(--pink-deep);font-size:1.35rem;line-height:1.6;padding:24px}
+.mirror .handle{width:26px;height:110px;background:var(--butter);border-radius:0 0 18px 18px;box-shadow:0 0 0 4px var(--cream);margin-top:-2px}
+
+/* sections */
+main{max-width:1000px;margin:0 auto;padding:24px clamp(20px,5vw,40px) 72px}
+section{margin-top:64px}
+h2{font-family:var(--serif);font-size:1.7rem;color:var(--pink-deep);font-weight:700;letter-spacing:.05em;display:inline-block;padding-bottom:4px;border-bottom:4px solid var(--pink)}
+.lead{margin-top:16px;max-width:36em}
+
+/* topics */
+.topics{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.topic{background:var(--paper);border:2px solid var(--pink);border-radius:22px 22px 22px 4px;padding:20px 22px}
+.topic h3{font-family:var(--serif);font-size:1.15rem;color:var(--pink-deep)}
+.topic p{font-size:.93rem;margin-top:6px;line-height:1.7}
+
+/* latest posts (twitter style: date + text only) */
+.feed{margin-top:24px;background:var(--paper);border:2px solid var(--pink);border-radius:22px;overflow:hidden}
+.post{padding:18px 24px;border-bottom:1.5px dashed #f5b3d4}
+.post:last-child{border-bottom:none}
+.post time{display:block;font-size:.85rem;color:var(--pink-deep);font-weight:700}
+.post p{margin-top:2px}
+.more{margin-top:16px;display:inline-block;color:var(--pink-deep);font-weight:700}
+
+/* gallery preview */
+.tiles{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.tile{aspect-ratio:3/4;border-radius:18px;display:flex;align-items:flex-end;padding:14px;font-size:.88rem;font-weight:500}
+.tile:nth-child(1){background:var(--pink);color:var(--cream)}
+.tile:nth-child(2){background:var(--butter)}
+.tile:nth-child(3){background:var(--blush)}
+.tile:nth-child(4){background:var(--pink-deep);color:var(--cream)}
+
+footer{background:var(--pink);color:var(--cream);text-align:center;padding:28px 20px;font-size:.9rem}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr}
+  .mirror{width:200px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">美容の勉強ノート</a>
+  <nav class="site-nav" aria-label="メインメニュー">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>きれいを、<br>じぶんの手で学ぶ。</h1>
+    <p>スキンケア、メイク、ヘアケア、ネイル。美容のことを少しずつ勉強して、その記録とイラストをここにためていきます。</p>
+    <div class="btns">
+      <a class="btn solid" href="blog.html">勉強の記録を見る</a>
+      <a class="btn line" href="gallery.html">イラストを見る</a>
+    </div>
+  </div>
+  <div class="mirror" aria-hidden="true">
+    <div class="glass">今日も<br>ちょっとだけ<br>きれいに</div>
+    <div class="handle"></div>
+  </div>
+</div>
+
+<main>
+  <section id="topics">
+    <h2>勉強していること</h2>
+    <p class="lead">気になった分野から順番に。わかったことは自分の言葉でまとめます。</p>
+    <div class="topics">
+      <div class="topic"><h3>スキンケア</h3><p>肌のしくみと、洗顔・保湿・日焼け止めの基本。</p></div>
+      <div class="topic"><h3>メイク</h3><p>色の選び方、道具の使い方、顔立ちに合わせた工夫。</p></div>
+      <div class="topic"><h3>ヘアケア</h3><p>髪の構造、洗い方、ドライヤーとアレンジ。</p></div>
+      <div class="topic"><h3>ネイル</h3><p>爪のケアとデザイン、セルフでできること。</p></div>
+    </div>
+  </section>
+
+  <section id="latest">
+    <h2>最近の記録</h2>
+    <div class="feed">
+      <article class="post"><time datetime="2026-10-15">2026.10.15</time><p>ここに今日の勉強の進捗を書きます。</p></article>
+      <article class="post"><time datetime="2026-10-14">2026.10.14</time><p>日付と日記だけのシンプルな投稿が並びます。</p></article>
+      <article class="post"><time datetime="2026-10-13">2026.10.13</time><p>ブログページができたら、最新の3件がここに出ます。</p></article>
+    </div>
+    <a class="more" href="blog.html">記録をもっと読む</a>
+  </section>
+
+  <section id="gallery-preview">
+    <h2>ギャラリー</h2>
+    <p class="lead">美容にまつわるイラストや漫画を載せていきます。</p>
+    <div class="tiles">
+      <div class="tile">イラスト（準備中）</div>
+      <div class="tile">イラスト（準備中）</div>
+      <div class="tile">漫画（準備中）</div>
+      <div class="tile">イラスト（準備中）</div>
+    </div>
+    <a class="more" href="gallery.html">ギャラリーへ行く</a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 美容の勉強ノート</p>
+</footer>
+
+</body>
+</html>
