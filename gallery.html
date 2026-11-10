@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | 美容の勉強ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff1493;
+  --pink-deep:#c70f75;
+  --blush:#ffe1ee;
+  --cream:#fff5e1;
+  --butter:#ffe7a0;
+  --ink:#3b1830;
+  --paper:#fffaf0;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.9;font-size:16px}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* header */
+.site-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px clamp(20px,5vw,56px);background:var(--pink);color:var(--cream)}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.06em}
+.site-nav{display:flex;gap:6px;flex-wrap:wrap}
+.site-nav a{text-decoration:none;padding:6px 16px;border-radius:999px;font-weight:500;font-size:.95rem}
+.site-nav a:hover,.site-nav a[aria-current="page"]{background:var(--cream);color:var(--pink-deep)}
+
+/* page title */
+.page-title{background:var(--pink);color:var(--cream);padding:8px clamp(20px,5vw,56px) 64px;position:relative}
+.page-title h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.06em}
+.page-title p{margin-top:6px}
+.page-title::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--cream);border-radius:50% 50% 0 0/100% 100% 0 0}
+
+main{max-width:1000px;margin:0 auto;padding:16px clamp(20px,5vw,40px) 72px}
+section{margin-top:48px}
+section:first-child{margin-top:16px}
+h2{font-family:var(--serif);font-size:1.6rem;color:var(--pink-deep);font-weight:700;letter-spacing:.05em;display:inline-block;padding-bottom:4px;border-bottom:4px solid var(--pink)}
+.note{margin-top:10px;font-size:.92rem}
+
+/* work cards */
+.works{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.work{background:var(--paper);border:2px solid var(--pink);border-radius:20px;overflow:hidden}
+.work .art{aspect-ratio:3/4;display:grid;place-items:center;font-size:.9rem;font-weight:500;text-align:center;padding:12px}
+.work .art img{width:100%;height:100%;object-fit:cover;display:block}
+.work:nth-child(4n+1) .art{background:var(--pink);color:var(--cream)}
+.work:nth-child(4n+2) .art{background:var(--butter)}
+.work:nth-child(4n+3) .art{background:var(--blush)}
+.work:nth-child(4n+4) .art{background:var(--pink-deep);color:var(--cream)}
+.work .cap{padding:12px 16px}
+.work .cap strong{display:block;font-family:var(--serif);font-size:1rem}
+.work .cap time{font-size:.8rem;color:var(--pink-deep);font-weight:700}
+
+footer{background:var(--pink);color:var(--cream);text-align:center;padding:28px 20px;font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">美容の勉強ノート</a>
+  <nav class="site-nav" aria-label="メインメニュー">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html" aria-current="page">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page-title">
+  <h1>Gallery</h1>
+  <p>美容にまつわるイラストと漫画を飾っています。</p>
+</div>
+
+<main>
+  <section id="illust">
+    <h2>イラスト</h2>
+    <p class="note">画像を載せるときは、「イラスト（準備中）」の文字を <code>&lt;img src="画像のファイル名" alt="絵の説明"&gt;</code> に置き換えてください。</p>
+    <div class="works">
+      <figure class="work"><div class="art">イラスト（準備中）</div><figcaption class="cap"><strong>タイトル</strong><time datetime="2026-10-15">2026.10.15</time></figcaption></figure>
+      <figure class="work"><div class="art">イラスト（準備中）</div><figcaption class="cap"><strong>タイトル</strong><time datetime="2026-10-14">2026.10.14</time></figcaption></figure>
+      <figure class="work"><div class="art">イラスト（準備中）</div><figcaption class="cap"><strong>タイトル</strong><time datetime="2026-10-13">2026.10.13</time></figcaption></figure>
+      <figure class="work"><div class="art">イラスト（準備中）</div><figcaption class="cap"><strong>タイトル</strong><time datetime="2026-10-12">2026.10.12</time></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="manga">
+    <h2>漫画</h2>
+    <div class="works">
+      <figure class="work"><div class="art">漫画（準備中）</div><figcaption class="cap"><strong>タイトル</strong><time datetime="2026-10-11">2026.10.11</time></figcaption></figure>
+      <figure class="work"><div class="art">漫画（準備中）</div><figcaption class="cap"><strong>タイトル</strong><time datetime="2026-10-10">2026.10.10</time></figcaption></figure>
+      <figure class="work"><div class="art">漫画（準備中）</div><figcaption class="cap"><strong>タイトル</strong><time datetime="2026-10-09">2026.10.09</time></figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 美容の勉強ノート</p>
+</footer>
+
+</body>
+</html>
