@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | 美容の勉強ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff1493;
+  --pink-deep:#c70f75;
+  --blush:#ffe1ee;
+  --cream:#fff5e1;
+  --butter:#ffe7a0;
+  --ink:#3b1830;
+  --paper:#fffaf0;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.9;font-size:16px}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* header */
+.site-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px clamp(20px,5vw,56px);background:var(--pink);color:var(--cream)}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.06em}
+.site-nav{display:flex;gap:6px;flex-wrap:wrap}
+.site-nav a{text-decoration:none;padding:6px 16px;border-radius:999px;font-weight:500;font-size:.95rem}
+.site-nav a:hover,.site-nav a[aria-current="page"]{background:var(--cream);color:var(--pink-deep)}
+
+/* page title */
+.page-title{background:var(--pink);color:var(--cream);padding:8px clamp(20px,5vw,56px) 64px;position:relative}
+.page-title h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.06em}
+.page-title p{margin-top:6px}
+.page-title::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--cream);border-radius:50% 50% 0 0/100% 100% 0 0}
+
+main{max-width:900px;margin:0 auto;padding:16px clamp(20px,5vw,40px) 72px}
+section{margin-top:48px}
+section:first-child{margin-top:16px}
+h2{font-family:var(--serif);font-size:1.5rem;color:var(--pink-deep);font-weight:700;letter-spacing:.05em;display:inline-block;padding-bottom:4px;border-bottom:4px solid var(--pink)}
+
+/* links */
+.link-grid{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.link-card{display:flex;align-items:center;gap:14px;text-decoration:none;background:var(--paper);border:2px solid var(--pink);border-radius:20px 20px 20px 4px;padding:14px 18px;transition:transform .2s,background .2s}
+.link-card:hover{background:var(--blush);transform:translateY(-2px)}
+.link-icon{flex-shrink:0;width:46px;height:46px;border-radius:50%;background:var(--butter);display:grid;place-items:center;font-size:1.4rem}
+.link-name{display:block;font-family:var(--serif);font-weight:700;color:var(--pink-deep);line-height:1.4}
+.link-desc{display:block;font-size:.82rem;line-height:1.5;margin-top:2px}
+
+/* form */
+.form-card{margin-top:20px;background:var(--paper);border:2px solid var(--pink);border-radius:22px;padding:28px clamp(18px,4vw,34px)}
+.form-intro{margin-bottom:20px;font-size:.95rem}
+.form-group{margin-bottom:18px}
+.form-label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+.required{color:var(--pink-deep)}
+.form-input,.form-textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:2px solid #f2a9cc;border-radius:12px;padding:10px 14px}
+.form-input:focus,.form-textarea:focus{border-color:var(--pink);outline:none;box-shadow:0 0 0 3px rgba(255,20,147,.18)}
+.form-textarea{min-height:150px;resize:vertical}
+.field-error{display:block;color:var(--pink-deep);font-size:.82rem;margin-top:4px}
+.form-submit{font:inherit;font-weight:700;color:var(--cream);background:var(--pink);border:none;border-radius:999px;padding:12px 32px;cursor:pointer}
+.form-submit:hover{background:var(--pink-deep)}
+.form-submit:disabled{opacity:.5;cursor:not-allowed}
+.form-success{background:var(--butter);border-radius:14px;padding:14px 18px;margin-bottom:18px;font-weight:700;text-align:center}
+.form-error-global{background:var(--blush);border:2px solid var(--pink);border-radius:14px;padding:12px 16px;margin-bottom:16px;color:var(--pink-deep);font-size:.9rem}
+
+.back-link{display:inline-block;margin-top:32px;color:var(--pink-deep);font-weight:700}
+
+/* footer */
+footer{background:var(--pink);color:var(--cream);text-align:center;padding:28px 20px;font-size:.82rem}
+footer p{max-width:800px;margin:0 auto 8px;line-height:1.8}
+footer p:last-child{margin-bottom:0}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">美容の勉強ノート</a>
+  <nav class="site-nav" aria-label="メインメニュー">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html" aria-current="page">About</a>
+  </nav>
+</header>
+
+<div class="page-title">
+  <h1>About</h1>
+  <p>リンクと、ご連絡のためのフォームです。</p>
+</div>
+
+<main>
+  <section id="works">
+    <h2>漫画・イラスト掲載サイト</h2>
+    <div class="link-grid">
+      <a class="link-card" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">📚</span>
+        <span><span class="link-name">ジャンプルーキー</span><span class="link-desc">オリジナル漫画を掲載中</span></span>
+      </a>
+      <a class="link-card" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">🎨</span>
+        <span><span class="link-name">Pixiv</span><span class="link-desc">二次創作はこちらに掲載</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="sns">
+    <h2>SNS・その他</h2>
+    <div class="link-grid">
+      <a class="link-card" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">🦋</span>
+        <span><span class="link-name">Bluesky</span><span class="link-desc">近況・作品のお知らせ</span></span>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">🎬</span>
+        <span><span class="link-name">YouTube（リリポピ）</span><span class="link-desc">動画チャンネル</span></span>
+      </a>
+      <a class="link-card" href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">🌸</span>
+        <span><span class="link-name">リリポピのホームページ</span><span class="link-desc">別サイト</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="sites">
+    <h2>Azalea72のホームページ</h2>
+    <div class="link-grid">
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">📖</span>
+        <span><span class="link-name">書評サイト</span><span class="link-desc">本・アニメ・映画・ゲーム・小説の備忘録</span></span>
+      </a>
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">🍔</span>
+        <span><span class="link-name">英語サイト（English Site）</span><span class="link-desc">英語話者と英語学習者に向けたサイト</span></span>
+      </a>
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">☁️</span>
+        <span><span class="link-name">水彩画サイト</span><span class="link-desc">水彩画掲載</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせフォーム</h2>
+    <div class="form-card">
+      <p class="form-intro">ご質問・ご感想などはこちらからどうぞ。<br>Gmailで受け取り、返信いたします。</p>
+
+      <div data-fs-success class="form-success" style="display:none;">
+        <p>メッセージを送信しました。ありがとうございます！</p>
+      </div>
+      <div data-fs-error class="form-error-global" style="display:none;"></div>
+
+      <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="name">お名前</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="Azalea72" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">メールアドレス <span class="required">*</span></label>
+          <input class="form-input" type="email" id="email" name="email" data-fs-field placeholder="example@email.com" required>
+          <span data-fs-error="email" class="field-error"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">メッセージ <span class="required">*</span></label>
+          <textarea class="form-textarea" id="message" name="message" data-fs-field placeholder="メッセージを入力してください…" rows="6" required></textarea>
+          <span data-fs-error="message" class="field-error"></span>
+        </div>
+        <button class="form-submit" type="submit" data-fs-submit-btn>送信する</button>
+      </form>
+    </div>
+  </section>
+
+  <a class="back-link" href="index.html">トップページに戻る</a>
+</main>
+
+<footer>
+  <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載・転載、二次利用を禁止します。スクリーンショットの転載・無断引用はご遠慮ください。</p>
+  <p>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvpvoz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
