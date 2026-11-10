@@ -56,6 +56,13 @@ h2{font-family:var(--serif);font-size:1.6rem;color:var(--pink-deep);font-weight:
 .work .cap strong{display:block;font-family:var(--serif);font-size:1rem}
 .work .cap time{font-size:.8rem;color:var(--pink-deep);font-weight:700}
 
+/* report link box */
+.report-box{display:block;margin-top:16px;text-decoration:none;background:var(--pink);color:var(--cream);border:3px solid var(--butter);border-radius:24px;padding:22px clamp(20px,4vw,34px);transition:transform .2s,background .2s}
+.report-box:hover{background:var(--pink-deep);transform:translateY(-2px)}
+.report-box .label{display:block;font-size:.85rem;font-weight:700;color:var(--butter)}
+.report-box .title{display:block;font-family:var(--serif);font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:700;letter-spacing:.05em;line-height:1.5}
+.report-box .go{display:block;margin-top:4px;font-size:.9rem}
+
 footer{background:var(--pink);color:var(--cream);text-align:center;padding:28px 20px;font-size:.9rem}
 </style>
 </head>
@@ -77,6 +84,12 @@ footer{background:var(--pink);color:var(--cream);text-align:center;padding:28px 
 </div>
 
 <main>
+  <a class="report-box" href="report1.html">
+    <span class="label">特集ページ</span>
+    <span class="title">成功？失敗？</span>
+    <span class="go">report1.html を読む</span>
+  </a>
+
   <section id="illust">
     <h2>イラスト</h2>
     <p class="note">画像を載せるときは、「イラスト（準備中）」の文字を <code>&lt;img src="画像のファイル名" alt="絵の説明"&gt;</code> に置き換えてください。</p>
